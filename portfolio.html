@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="icon" href="images/favicon/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.min.css">
+    <style>
+        .select2 {
+            width: 100% !important;
+        }
+        .select2-container--default .select2-selection--single {
+            background-color: #fff;
+            border: none;
+            border-radius: 7px;
+            box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.11);
+        }
+        .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+        }
+        .select2-container .select2-selection--single {
+            height: 57px;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: rgba(107,60,202,.8);
+            line-height: 57px;
+            text-transform: uppercase;
+        }
+        .select2-container .select2-selection--single .select2-selection__rendered {
+            padding-left: 32px;
+        }
+        .select2-container--default .select2-results__option--disabled {
+            color: #999;
+            text-transform: uppercase;
+        }
+        .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+            background-color: #6B3CCA;
+            color: #fff;
+        }
+        .select2-dropdown {
+            color: #6B3CCA;
+            text-transform: uppercase;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow b {
+            border: none;
+            position: relative;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 9px;
+            position: absolute;
+            top: 7px;
+            right: 32px;
+            width: 15px;
+        }
+        .select2-selection__arrow b::before {
+            position: absolute;
+            content: url('images/portf-arrow.svg');
+            width: 15px;
+            height: 9px;
+            top: 0;
+            left: 0;
+            display: block;
+        }
+        .select2-container--open .select2-selection__arrow b::before {
+            transform: rotate(180deg);
+            top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="burger">
+                    <span></span>
+                </div>
+                <a href="#" class="logo">
+                    <img src="images/logo.svg" alt="logo">
+                    <span>Viel</span>
+                </a>
+                <ul class="menu-list">
+                    <li class="menu-list__item">
+                        <a href="index.html" class="menu-list__link" data-value="About us">About us</a>
+                    </li>
+                    <li class="menu-list__item active">
+                        <a href="portfolio.html" class="menu-list__link" data-value="Portfolio">Portfolio</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="team.html" class="menu-list__link" data-value="Team">Team</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="insight.html" class="menu-list__link" data-value="Insight">Insight</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="contacts.html" class="menu-list__link" data-value="Contacts">Contacts</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="portfolio__top">
+                <h2 class="portfolio__title page-title">backed projects</h2>
+                <p class="portfolio__subtitle page-subtitle">We have a great reach of projects in various industries, complexity and size. Both completed and in-progress, here is a
+                list of our projects</p>
+            </div>
+            <div class="portfolio__selects row">
+                <div class="portfolio__select col-xl-4 col-12">
+                    <select class="portfolio__selectIndustry" id="selectIndustry" name="industry" onchange="projectsFiltration()">
+                        <option value="Industry" selected>Industry</option>
+                        <option value="Industrialproduction">Industrial production</option>
+                        <option value="RealEstate">Real Estate</option>
+                        <option value="ChemicalManufacturing">Chemical Manufacturing</option>
+                        <option value="Publishing">Publishing</option>
+                        <option value="AccoutingConsulting">Accouting / Consulting</option>
+                        <option value="LegalConsulting">Legal / Consulting</option>
+                        <option value="Logistics">Logistics</option>
+                        <option value="Agriculture">Agriculture</option>
+                        <option value="Softwaredevelopment">Software development</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Architecture">Architecture</option>
+                        <option value="Lowpowernetworks">Low power networks</option>
+                        <option value="BrickandMortar">Brick and Mortar</option>
+                        <option value="Navigation">Navigation</option>
+                        <option value="Textileproduction">Textile production</option>
+                        <option value="Woodworkproduction">Woodwork production</option>
+                        <option value="Sporttoys">Sport / toys</option>
+                        <option value="SkinCare">Skin Care</option>
+                        <option value="PelletManufacturing">Pellet Manufacturing</option>
+                        <option value="Fond">Fund</option>
+                        <option value="Cybersecurity">Cyber security</option>
+                        <option value="Telecommunication">Telecommunication</option>
+                        <option value="Medical">Medical</option>
+                        <option value="E-Commerce">E-Commerce</option>
+                        <option value="Farming">Farming</option>
+                        <option value="SportEntertainment">Spot / Entertainment</option>
+                        <option value="Smartdevicetransportation">Smart device / transportation</option>
+                        <option value="Education">Education</option>
+                    </select>
+                </div>
+                <div class="portfolio__select col-xl-4 col-sm-6 col-12">
+                    <select class="portfolio__selectStage" id="selectStage" name="stage" onchange="projectsFiltration()">
+                        <option value="0" disabled selected>Stage</option>
+                        <option value="Exit">Exit</option>
+                        <option value="Funding">Funding</option>
+                        <option value="Current">Current</option>
+                    </select>
+                </div>
+                <div class="portfolio__select col-xl-4 col-sm-6 col-12">
+                    <select class="portfolio__selectType" id="selectType" name="type" onchange="projectsFiltration()">
+                        <option value="0" disabled selected>Type</option>
+                        <option value="Project">Project</option>
+                        <option value="PlatformEnvironment">Platform Environment</option>
+                    </select>
+                </div>
+            </div>
+            <div class="portfolio__items row">
+                <div class="portfolio__item col-lg-4 col-sm-6">
+                    <div class="portfolio__card" style="background-image: url('images/portfolio1.jpg');">
+                        <h3 class="portfolio__card-title">braitberry</h3>
+                        
+                    </div>
+                </div>
+                <div class="portfolio__item col-lg-4 col-sm-6">
+                    <div class="portfolio__card" style="background-image: url('images/portfolio2.jpg');">
+                        <h3 class="portfolio__card-title">Food Analytix</h3>
+                        <p class="portfolio__card-sign">A unique and complex solution which provides reliable and safe storage of
+                            cryptocurrencies</p>
+                        <a href="#" class="portfolio__card-btn">Download PDF</a>
+                    </div>
+                </div>
+                <div class="portfolio__item col-lg-4 col-sm-6">
+                    <div class="portfolio__card" style="background-image: url('images/portfolio3.jpg');">
+                        <h3 class="portfolio__card-title">Latos</h3>
+                        <p class="portfolio__card-sign">A unique and complex solution which provides reliable and safe storage of cryptocurrencies</p>
+                        <a href="#" class="portfolio__card-btn">Download PDF</a>
+                    </div>
+                </div>
+                <div class="portfolio__item col-lg-4 col-sm-6">
+                    <div class="portfolio__card" style="background-image: url('images/portfolio4.jpg');">
+                        <h3 class="portfolio__card-title">AgroDrone</h3>
+                    </div>
+                </div>
+                <div class="portfolio__item col-lg-4 col-sm-6">
+                    <div class="portfolio__card" style="background-image: url('images/portfolio5.jpg');">
+                        <h3 class="portfolio__card-title">lusson</h3>
+                    </div>
+                </div>
+                <div class="portfolio__item col-lg-4 col-sm-6">
+                    <div class="portfolio__card" style="background-image: url('images/portfolio6.jpg');">
+                        <h3 class="portfolio__card-title">aura</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__inner row">
+                <div class="footer__left col-lg-4 col-sm-5
+                    col-12">
+                    <a href="#" class="logo">
+                        <img src="images/logo.svg" alt="logo">
+                        <span>Viel</span>
+                    </a>
+                    <p class="footer__sign">Building innovative solutions in diverse fields for existing
+                        and future customers</p>
+                    <p class="copyright">© 2021 VIEL.<br>
+                        All Rights Reserved.</p>
+                </div>
+                <nav class="footer__menu col-lg-3 col-sm-3 col-12">
+                    <h3 class="footer__menu-title">menu</h3>
+                    <ul class="footer__menu-list">
+                        <li class="footer__menu-item"><a href="#">About us</a></li>
+                        <li class="footer__menu-item"><a href="#">Portfolio</a></li>
+                        <li class="footer__menu-item"><a href="#">Team</a></li>
+                        <li class="footer__menu-item"><a href="#">Insight</a></li>
+                        <li class="footer__menu-item"><a href="#">Contacts</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__contacts col-lg-4 col-sm-4 col-12">
+                    <h3 class="footer__contacts-title">contacts</h3>
+                    <div class="footer__contacts-links">
+                        <a href="tel:+33756757124" class="footer__contacts-link">
+                            <img src="images/phone.svg" alt="phone">
+                            <span>+33 7 56 75 71 24</span>
+                        </a>
+                        <a href="mailto:info@viel-group.fr" class="footer__contacts-link">
+                            <img src="images/mail.svg" alt="mail">
+                            <span>info@viel-group.fr</span>
+                        </a>
+                        <p class="footer__contacts-link">
+                            <img src="images/place.svg" alt="place">
+                            <span>45 Allée des Ormes, 06250 Mougins</span>
+                        </p>
+                        <a href="#" class="footer__contacts-link" target="_blank">
+                            <img src="images/linkedin.svg" alt="linkedin">
+                            <span>Linkedin</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="to-top col-lg-1 col-12 ml-auto">
+                    <div class="to-top__icon">
+                        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.6" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M21 42C32.598 42 42 32.598 42 21C42 9.40202 32.598 0 21 0C9.40202 0 0 9.40202 0 21C0 32.598 9.40202 42 21 42ZM16.1525 25.9601C15.6222 26.5965 14.6764 26.6825 14.0399 26.1521C13.4035 25.6218 13.3175 24.6759 13.8479 24.0395L20.1479 16.4795C20.4329 16.1375 20.855 15.9398 21.3002 15.9398C21.7454 15.9398 22.1676 16.1375 22.4525 16.4795L28.7525 24.0395C29.2829 24.6759 29.1969 25.6218 28.5605 26.1521C27.9241 26.6825 26.9782 26.5965 26.4479 25.9601L21.3002 19.7829L16.1525 25.9601Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.min.js"></script>
+</body>
+</html>
